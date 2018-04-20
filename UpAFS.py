@@ -32,6 +32,7 @@ def AFS(a, pwm, dep, phi):
   den = 998
   cd = 0.461
   m = 6.223
+  print(a)
   Fr = m * a
   Fdsub = Ft - Fr
   if Fdsub < 0: 
