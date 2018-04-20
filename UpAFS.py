@@ -10,10 +10,10 @@ def ace ():
       print('X={0}, Y={1}, Z={2}'.format(x, y, z))
       # Wait half a second and repeat.
       time.sleep(1.5)
-      if abs(x)<=5:
+      if abs(y)<=5:
         print("Values too small /n")
       else:
-       AFS(x,1711,6,10)
+       AFS(y,1711,6,10)
       
 
   #print('Printing X, Y, Z axis values, press Ctrl-C to quit...')
