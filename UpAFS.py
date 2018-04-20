@@ -1,7 +1,9 @@
+import time
+import Adafruit_ADXL345
+import numpy as np 
+import math
+
 def ace ():
-  import time
-  import Adafruit_ADXL345
-  # Create an ADXL345 instance.
   accel = Adafruit_ADXL345.ADXL345()
 
   while True:
@@ -22,14 +24,9 @@ def ace ():
 
 
 def AFS(a, pwm, dep, phi):
-  #import time
-  import numpy as np 
-  import math
-  #import numpy as np 
   table = np.genfromtxt("PWM&Thrust.txt")
   PWM = table[:, 0]
   Fthrust = table[:, 1]
-  #import math
   aa =math.floor((pwm - 1480) / 10) + 1
   bb =math.ceil((pwm - 1480) / 10) + 1
   Ft = Fthrust[int(aa)] + (Fthrust[int(bb)] - Fthrust[int(aa)]) * ((pwm - PWM[int(aa)]) / 10)
