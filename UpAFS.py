@@ -1,4 +1,5 @@
 def ace ():
+  import time
   import Adafruit_ADXL345
   # Create an ADXL345 instance.
   accel = Adafruit_ADXL345.ADXL345()
@@ -16,11 +17,11 @@ def ace ():
 
 
 def AFS(a, pwm, dep, phi):
-  import time
+  #import time
   import numpy as np 
   import math
   #import numpy as np 
-  table =np.genfromtxt("SAMPLE/PWM&Thrust.txt")
+  table = np.genfromtxt("PWM&Thrust.txt")
   PWM = table[:, 0]
   Fthrust = table[:, 1]
   #import math
@@ -44,8 +45,8 @@ def AFS(a, pwm, dep, phi):
   Reylp = u * c / vv
   vfl = 0.000009
   if Reylp < 60000:
-    textfile = "SAMPLE/Reynold50000.txt"
-  textfile = "SAMPLE/Reynold100000.txt"
+    textfile = "Reynold50000.txt"
+  textfile = "Reynold100000.txt"
   data = np.genfromtxt(textfile)
   angle = data[:,0]
   cl = data[:,1]
@@ -108,9 +109,9 @@ def AFS(a, pwm, dep, phi):
   tim=15
   phiac = phir * 2 / (tim ** 2)
   if Reylpy < 50000:
-    textfiley="SAMPLE/naca2412_50000.txt"
-  textfiley="SAMPLE/naca2412_100000.txt"
-  data1= np.genfromtxt(textfiley)
+    textfiley="naca2412_50000.txt"
+  textfiley="naca2412_100000.txt"
+  data1 = np.genfromtxt(textfiley)
   angley = data1[:,0]
   cly = data1[:,1]
   cdy = data1[:,2]
