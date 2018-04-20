@@ -1,7 +1,3 @@
-import time
-import numpy as np 
-import math
-
 def ace ():
   import Adafruit_ADXL345
   # Create an ADXL345 instance.
