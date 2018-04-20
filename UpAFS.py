@@ -1,9 +1,9 @@
 import time
-import Adafruit_ADXL345
 import numpy as np 
 import math
 
 def ace ():
+  import Adafruit_ADXL345
   # Create an ADXL345 instance.
   accel = Adafruit_ADXL345.ADXL345()
 
@@ -20,6 +20,9 @@ def ace ():
 
 
 def AFS(a, pwm, dep, phi):
+  import time
+  import numpy as np 
+  import math
   #import numpy as np 
   table =np.genfromtxt("SAMPLE/PWM&Thrust.txt")
   PWM = table[:, 0]
