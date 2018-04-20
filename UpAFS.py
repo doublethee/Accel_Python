@@ -10,6 +10,11 @@ def ace ():
       print('X={0}, Y={1}, Z={2}'.format(x, y, z))
       # Wait half a second and repeat.
       time.sleep(1.5)
+      if abs(x)<=25:
+        print("Values too small /n")
+      else:
+       AFS(x,1711,6,10)
+      
 
   #print('Printing X, Y, Z axis values, press Ctrl-C to quit...')
   return(x)
@@ -38,7 +43,8 @@ def AFS(a, pwm, dep, phi):
   if Fdsub < 0: 
     print ("Input of Pulse Width Is Small")
     vel = 0
-  vel = math.sqrt(Fdsub / (0.5 * Area * den * cd))
+  else:
+    vel = math.sqrt(Fdsub / (0.5 * Area * den * cd))
   u = vel
   c = 0.12
   b = 0.2
@@ -133,15 +139,9 @@ def AFS(a, pwm, dep, phi):
     if diffy > 0:
       phiservo = angyaw
       break
+    else: 
+      phiservo = 0
   print (phiservo)
   
-def main (): 
-  a = ace
-  b = 1711
-  c = 6
-  d = 10  
-  fins = AFS(a,b,c,d)
-    
-if __name__ == "__main__":
-  main()
+
 
