@@ -9,6 +9,7 @@
 # -*- coding:utf-8 -*-
 import RPi.GPIO as GPIO
 import time
+import sys
 
 Relay_Ch1 = 26
 Relay_Ch2 = 20
@@ -51,6 +52,8 @@ try:
 		GPIO.output(Relay_Ch3,GPIO.HIGH)
 		print("Channel 3:The Common Contact is access to the Normal Closed Contact!\n")
 		time.sleep(1)
+		
+		sys.exit()
 		
 except:
 	print("except")
